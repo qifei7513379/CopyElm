@@ -1,3 +1,6 @@
+※并不是用原本的Vue1.0，而是使用了Vue2.0。
+※抛弃了1.0的vue-resourse，采用axios进行Ajax交互。
+※没有采用stylus的CSS脚本化，采用原生，后期用sass进行编码。
 # copyelm
 
 > A Vue.js project
