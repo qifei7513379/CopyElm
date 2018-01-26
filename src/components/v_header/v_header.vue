@@ -36,6 +36,34 @@
 			
 		<transition name="fade">
 			<div v-if="show" class="tanceng">
+				<div class="tanceng-wrapper clearfix">
+					<div class="tanceng-main">
+						<h1 class="name">{{seller.name}}</h1>
+						<div class="star-wraper">
+							<star :size="48" :score="seller.score"></star>
+						</div>
+						<div class="minTitle">
+							<div class="line"></div>
+							<div class="text">优惠信息</div>
+							<div class="line"></div>
+						</div>
+						<ul v-if="seller.supports" class="supports">
+							<li class="support-item" v-for="(item,index) in seller.supports">
+								<span class="icon" :class="change[seller.supports[index].type]"></span>
+								<span class="text1">{{seller.supports[index].description}}</span>
+							</li>
+						</ul>
+						<div class="minTitle">
+							<div class="line"></div>
+							<div class="text">商家公告</div>
+							<div class="line"></div>
+						</div>
+						<div class="bulletin1">
+							{{seller.bulletin}}
+						</div>
+						
+					</div>
+				</div>
 				<div class="close" @click="close">
 					×
 				</div>
@@ -46,8 +74,10 @@
 </template>
 
 <script>
+	import star from '../star/star'
 	export default{
 		name:'v_header',
+		components:{star},
 		data(){
 			return{
 				change:[],
@@ -91,7 +121,7 @@
 	.bulletin{font-size: 10px;color: white;display: inline;line-height: 10px;}
 	.jiantou{position: absolute;top: 8px;right: 12px;}
 	.count{font-size: 10px;color: white;position: absolute;right: 12px;bottom: 15px;padding: 7px 8px;background: rgba(0,0,0,.2);border-radius:16px;}
-	.tanceng{position: absolute;top: 0;width: 100%;height: 100vh;background: rgba(7,17,27,.8);z-index: 999;}
+	.tanceng{position: fixed;top: 0;width: 100%;background: rgba(7,17,27,.8);z-index: 100;overflow: auto;height: 100%;padding-bottom: 64px;}
 	.fade-enter-active, .fade-leave-active {
 	  transition: opacity .5s;
 	}
@@ -99,14 +129,20 @@
 	  opacity: 0;
 	}
 	.up-head{overflow: hidden;position: relative;}
-	.close{font-size: 36px;color: white;}
-
-
-
-
-
-
-
+	.tanceng-wrapper{min-height: 100%;width: 100%;}
+	.tanceng-main{margin-top: 64px;padding-bottom: 64px;}
+	.close{font-size: 32px;color: white;position: relative;text-align: center;width: 100%;height: 64px;line-height: 32px;margin-top: -64px;clear: both;}
+	.name{font-weight: 700;color: white;font-size: 16px;line-height: 16px;text-align: center;}
+	.star-wraper{margin-top: 18px;padding: 2px 0;text-align: center;}
+	.minTitle{width: 80%;margin: 28px auto 24px auto;display: flex;}
+	.line{flex: 1;position: relative;top: -8px;border-bottom: 1px solid rgba(255,255,255,.2);}
+	.text{padding: 0 12px;font-size: 14px;color: white;font-weight: 700;}
+	.text1{color: white;}
+	.bulletin1{color: white;margin: 0 auto;width: 76%;font-size: 12px;font-weight: 200;line-height: 24px;text-align: justify;}
+	.supports{width: 76%;margin: 0 auto;padding: 0;}
+	.support-item{list-style: none;font-size: 0;margin-bottom: 12px;}
+	.text1{font-size: 12px;font-weight: 200;margin-left: 6px;}
+	.icon{width: 16px;height: 16px;}
 
 
 
