@@ -52,7 +52,7 @@
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
-	.tab{display: flex;background: white;height: 40px;}
+	.tab{display: flex;background: white;height: 40px;border-bottom: 1px solid rgba(7,17,27,.1);}
 	.tab-item{flex: 1;text-align: center;font-size: 14px;height: 40px;;}
 	.tab-item a{display: block;color: rgb(77,85,93);height: 40px;line-height: 40px;}
 	.tab-item .router-link-active{color: rgb(240,20,20);}
