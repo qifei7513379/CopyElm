@@ -11,9 +11,11 @@
 						{{seller.description}}/{{seller.deliveryTime}}分钟送达
 					</div>
 					<div class="active" v-if="seller.supports">										
-						<span :class="change[seller.supports[0].type]"></span>										
+						<span class="icon" :class="classMap[seller.supports[0].type]"></span>										
 						{{seller.supports[0].description}}
 					</div>
+
+					
 				</div>
 				<div class="count" v-if="seller.supports" @click="tanceng">
 					{{seller.supports.length}}个  &nbsp;&nbsp;›
@@ -49,10 +51,10 @@
 						</div>
 						<ul v-if="seller.supports" class="supports">
 							<li class="support-item" v-for="(item,index) in seller.supports">
-								<span class="icon" :class="change[seller.supports[index].type]"></span>
+								<span class="icon" :class="classMap[seller.supports[index].type]"></span>
 								<span class="text1">{{seller.supports[index].description}}</span>
 							</li>
-						</ul>
+						</ul>						
 						<div class="minTitle">
 							<div class="line"></div>
 							<div class="text">商家公告</div>
@@ -80,14 +82,14 @@
 		components:{star},
 		data(){
 			return{
-				change:[],
-				show:false
+				show:false,
+				classMap:[]
 			}
 		},
-		props: ['seller'],
 		created(){
-			this.change = ["t0","t1","t2","t3","t4"]
+			this.classMap = ['t0','t1','t2','t3','t4']
 		},
+		props: ['seller'],
 		methods:{
 			tanceng:function (){
 				this.show = true	
@@ -142,7 +144,7 @@
 	.supports{width: 76%;margin: 0 auto;padding: 0;}
 	.support-item{list-style: none;font-size: 0;margin-bottom: 12px;}
 	.text1{font-size: 12px;font-weight: 200;margin-left: 6px;}
-	.icon{width: 16px;height: 16px;}
+	.supports .icon{width: 16px;height: 16px;}
 
 
 

@@ -22,36 +22,24 @@
 		name: 'App',
 		components:{v_header},
 		data(){
-	    return {
-	        seller: {},
-	        goods:{}
-	    };
+		    return {
+		        seller: {},
+		    }
 		},
 		created() {
 //			var that=this;
 			var url1 = 'http://localhost:3000/seller'
-			var url2 = 'http://localhost:3000/goods'
 			this.$axios(url1)
 				.then((response)=> {
 					//console.log(that.seller)
 					if(response.data.errno === 0) {
 						this.seller = response.data.data
-						console.log(this.seller);
 					}
 				})
 				.catch(function(error) {
 					//console.log(error);
 				});
-			this.$axios(url2)
-				.then((response)=> {
-					if(response.data.errno === 0) {
-						this.goods = response.data.data
-						console.log(this.goods);
-					}
-				})
-				.catch(function(error) {
-					//console.log(error);
-				});
+
 		}
 	}
 </script>
@@ -65,7 +53,7 @@
 		-moz-osx-font-smoothing: grayscale;
 	}
 	.tab{display: flex;background: white;height: 40px;}
-	.tab-item{flex: 1;text-align: center;font-size: 14px;height: 40px;}
+	.tab-item{flex: 1;text-align: center;font-size: 14px;height: 40px;;}
 	.tab-item a{display: block;color: rgb(77,85,93);height: 40px;line-height: 40px;}
 	.tab-item .router-link-active{color: rgb(240,20,20);}
 </style>
