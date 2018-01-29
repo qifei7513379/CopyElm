@@ -11,7 +11,7 @@
 		</div>
 		<div class="foods-wrapper" ref="fwrapper">
 			<ul>
-				<li v-for="item in goods" class="food-list">
+				<li v-for="item in goods" class="food-list food-list-hook">
 					<h1 class="titel2">{{item.name}}</h1>
 					<ul>
 						<li v-for="food in item.foods" class="food-item">
@@ -40,7 +40,8 @@
 		data(){
 		    return {
 		        goods: [],
-		        classMap:[]	        
+		        classMap:[],
+		        listHeight:[]
 		    }
 		},
 		props:{
