@@ -25,6 +25,7 @@
 								<div class="price">
 									<span class="newPrice">￥<span>{{food.price}}</span></span><span v-show="food.oldPrice" class="oldPrice">￥<span>{{food.oldPrice}}</span></span>
 								</div>
+								
 							</div>
 						</li>
 					</ul>
@@ -126,6 +127,7 @@
 	}
 </script>
 
+
 <style lang="scss" scoped="" type="text/css">
 	.goods {
 		position: absolute;
@@ -133,7 +135,7 @@
 		top: 180px;
 		bottom: 46px;
 		display: flex;
-		overflow: hidden;		
+		overflow: hidden;	
 		.menu-wrapper {
 			flex: 0 0 80px;
 			width: 80px;
@@ -279,9 +281,11 @@
 									text-decoration: line-through;
 									margin-left: 8px;
 								}
-								.newPrice,.oldPrice {
-									span {
-										font-size: 14px;font-weight: 700;
+								.newPrice ,.oldPrice {
+										span {
+										font-size: 14px;
+										font-weight: 700;
+										
 									}
 								}
 							}

@@ -5,6 +5,8 @@ import App from './App'
 import router from './router'
 import axios from '../node_modules/axios' 
 
+//import './common/scss/style.scss';
+
 Vue.prototype.$axios = axios;  
 Vue.config.productionTip = false;
 

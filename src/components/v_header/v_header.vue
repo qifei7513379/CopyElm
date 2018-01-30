@@ -263,7 +263,7 @@
 			padding-bottom: 64px;
 			.tanceng-wrapper{
 				min-height: 100%;
-				width: 100%;
+				width: 100%;				
 				.tanceng-main{
 					margin-top: 64px;
 					padding-bottom: 64px;

@@ -1,11 +1,17 @@
 <template>
 	<div class="shopcart">
-		<div class="content1">
+		<div class="content">
 			<div class="content-left">
 				<div class="logo-wrapper">
-					<div class="cart-logo">
-						<span></span>
+					<div class="logo">
+						<i class="icon-shopping_cart"></i>
 					</div>
+				</div>
+				<div class="price">
+					
+				</div>
+				<div class="desc">
+					
 				</div>
 			</div>
 			<div class="content-right">
@@ -19,5 +25,56 @@
 	export default{}
 </script>
 
-<style>
+<style lang="scss" scoped="" type="text/css">
+	.shopcart{
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		z-index: 50;
+		width: 100%;
+		height: 48px;
+		.content{
+			display: flex;
+			background: #141d27;
+			font-size: 0;
+			.content-left{
+				flex: 1;				
+				.logo-wrapper{
+					display: inline-block;
+					position: relative;
+					top: -10px;
+					margin: 0 12px;
+					padding: 6px;
+					width: 56px;
+					height: 56px;
+					box-sizing: border-box;
+					vertical-align: top;
+					border-radius: 50%;
+					background: #141d27;
+					.logo{
+						width: 100%;
+						height: 100%;
+						border-radius: 50%;
+						background: #2b343c;
+						text-align: center;
+						.icon-shopping_cart {
+							font-size: 24px;
+							color: #80858a;
+							line-height: 44px;							
+						}
+					}
+				}
+				.price{
+					display: inline-block;
+				}
+				.desc{
+					display: inline-block;
+				}	
+			}
+			.content-right{
+				flex: 0 0 105px;
+				width: 105px;
+			}
+		}
+	}
 </style>
