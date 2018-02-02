@@ -24,15 +24,14 @@
 								</div>
 								<div class="price">
 									<span class="newPrice">￥<span>{{food.price}}</span></span><span v-show="food.oldPrice" class="oldPrice">￥<span>{{food.oldPrice}}</span></span>
-								</div>
-								
+								</div>								
 							</div>
 						</li>
 					</ul>
 				</li>
 			</ul>
 		</div>
-		<shopcart></shopcart>
+		<shopcart :deliveryprice="seller.deliveryPrice" :minprice="seller.minPrice"></shopcart>
 	</div>
 </template>
 
@@ -95,8 +94,7 @@
 				this.foodsScroll.on('scroll', (pos) => {
                     // 拿到实时的y坐标
                     this.scrollY = Math.abs(Math.round(pos.y));
-                })
-				
+               })				
 			},
 			_calculateHeight() {
                 // 获取食物的li Dom节点列表
