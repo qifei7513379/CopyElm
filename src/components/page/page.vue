@@ -85,7 +85,7 @@
 		          if(index == this.current) return;
 		            this.current = index;
 		            //这里可以发送ajax请求
-					this.$axios('http://localhost:3000/ratings?current')
+					this.$axios('http://localhost:3000/ratings?'+this.current)
 					.then((response)=> {
 						if(response.data.errno === 0) {
 //							this.ratings = response.data.data;
